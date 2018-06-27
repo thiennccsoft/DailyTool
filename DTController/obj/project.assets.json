@@ -3584,23 +3584,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\shj\\.nuget\\packages\\": {},
+    "C:\\Users\\ducan\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "A:\\Git\\DailyTool\\DTController\\DTControllers.csproj",
+      "projectUniqueName": "E:\\ThucTap\\API\\DailyTool\\DTController\\DTControllers.csproj",
       "projectName": "DTControllers",
-      "projectPath": "A:\\Git\\DailyTool\\DTController\\DTControllers.csproj",
-      "packagesPath": "C:\\Users\\shj\\.nuget\\packages\\",
-      "outputPath": "A:\\Git\\DailyTool\\DTController\\obj\\",
+      "projectPath": "E:\\ThucTap\\API\\DailyTool\\DTController\\DTControllers.csproj",
+      "packagesPath": "C:\\Users\\ducan\\.nuget\\packages\\",
+      "outputPath": "E:\\ThucTap\\API\\DailyTool\\DTController\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\shj\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ducan\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3613,11 +3613,11 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "A:\\Git\\DailyTool\\DTModels\\DTModels.csproj": {
-              "projectPath": "A:\\Git\\DailyTool\\DTModels\\DTModels.csproj"
+            "E:\\ThucTap\\API\\DailyTool\\DTModels\\DTModels.csproj": {
+              "projectPath": "E:\\ThucTap\\API\\DailyTool\\DTModels\\DTModels.csproj"
             },
-            "A:\\Git\\DailyTool\\DTValueObjects\\DTValueObjects.csproj": {
-              "projectPath": "A:\\Git\\DailyTool\\DTValueObjects\\DTValueObjects.csproj"
+            "E:\\ThucTap\\API\\DailyTool\\DTValueObjects\\DTValueObjects.csproj": {
+              "projectPath": "E:\\ThucTap\\API\\DailyTool\\DTValueObjects\\DTValueObjects.csproj"
             }
           }
         }
