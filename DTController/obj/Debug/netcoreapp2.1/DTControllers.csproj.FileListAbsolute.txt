@@ -1,0 +1,14 @@
+A:\Git\DailyTools\DTController\obj\Debug\netcoreapp2.1\DTControllers.csprojAssemblyReference.cache
+A:\Git\DailyTools\DTController\obj\Debug\netcoreapp2.1\DTControllers.csproj.CoreCompileInputs.cache
+A:\Git\DailyTools\DTController\obj\Debug\netcoreapp2.1\DTControllers.AssemblyInfoInputs.cache
+A:\Git\DailyTools\DTController\obj\Debug\netcoreapp2.1\DTControllers.AssemblyInfo.cs
+A:\Git\DailyTools\DTController\bin\Debug\netcoreapp2.1\DTControllers.deps.json
+A:\Git\DailyTools\DTController\bin\Debug\netcoreapp2.1\DTControllers.dll
+A:\Git\DailyTools\DTController\bin\Debug\netcoreapp2.1\DTControllers.pdb
+A:\Git\DailyTools\DTController\bin\Debug\netcoreapp2.1\DTModels.dll
+A:\Git\DailyTools\DTController\bin\Debug\netcoreapp2.1\DTValueObjects.dll
+A:\Git\DailyTools\DTController\bin\Debug\netcoreapp2.1\DTModels.pdb
+A:\Git\DailyTools\DTController\bin\Debug\netcoreapp2.1\DTValueObjects.pdb
+A:\Git\DailyTools\DTController\obj\Debug\netcoreapp2.1\DTControllers.csproj.CopyComplete
+A:\Git\DailyTools\DTController\obj\Debug\netcoreapp2.1\DTControllers.dll
+A:\Git\DailyTools\DTController\obj\Debug\netcoreapp2.1\DTControllers.pdb
