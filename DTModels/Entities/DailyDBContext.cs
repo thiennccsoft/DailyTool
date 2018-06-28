@@ -22,6 +22,10 @@ namespace DTModels.Entities
         {
         }
 
-        
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if(!optionsBuilder.IsConfigured)
+                optionsBuilder.UseSqlServer(@"Server=.;Database=DailyToolDB;Trusted_Connection=True;ConnectRetryCount=0;User Id=sa;Password=123456;");
+        }
     }
 }

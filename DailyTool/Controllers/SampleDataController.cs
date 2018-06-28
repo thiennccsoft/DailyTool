@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DTModels.Entities;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DailyTool.Controllers
@@ -39,6 +40,18 @@ namespace DailyTool.Controllers
                     return 32 + (int)(TemperatureC / 0.5556);
                 }
             }
+        }
+
+        [HttpGet("[action]")]
+        public void Insert()
+        {
+            DailyDBContext db = new DailyDBContext();
+            Guid g = Guid.Parse("b0a22c23-1ea8-48ba-ae1b-08d5dcb1beaf");
+            Items item = db.Items.Where(a => a.PlanId == g).Single();
+            item.Name = "hahahahhahah";
+            db.Items.Attach(item);
+            db.Entry(item).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+            db.SaveChanges();
         }
     }
 }
