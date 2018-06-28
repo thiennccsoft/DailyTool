@@ -12,3 +12,17 @@ A:\Git\DailyTools\DTController\bin\Debug\netcoreapp2.1\DTValueObjects.pdb
 A:\Git\DailyTools\DTController\obj\Debug\netcoreapp2.1\DTControllers.csproj.CopyComplete
 A:\Git\DailyTools\DTController\obj\Debug\netcoreapp2.1\DTControllers.dll
 A:\Git\DailyTools\DTController\obj\Debug\netcoreapp2.1\DTControllers.pdb
+E:\GitHub\NET CORE\DailyTool\DTController\bin\Debug\netcoreapp2.1\DTControllers.deps.json
+E:\GitHub\NET CORE\DailyTool\DTController\bin\Debug\netcoreapp2.1\DTControllers.dll
+E:\GitHub\NET CORE\DailyTool\DTController\bin\Debug\netcoreapp2.1\DTControllers.pdb
+E:\GitHub\NET CORE\DailyTool\DTController\bin\Debug\netcoreapp2.1\DTModels.dll
+E:\GitHub\NET CORE\DailyTool\DTController\bin\Debug\netcoreapp2.1\DTValueObjects.dll
+E:\GitHub\NET CORE\DailyTool\DTController\bin\Debug\netcoreapp2.1\DTModels.pdb
+E:\GitHub\NET CORE\DailyTool\DTController\bin\Debug\netcoreapp2.1\DTValueObjects.pdb
+E:\GitHub\NET CORE\DailyTool\DTController\obj\Debug\netcoreapp2.1\DTControllers.csprojAssemblyReference.cache
+E:\GitHub\NET CORE\DailyTool\DTController\obj\Debug\netcoreapp2.1\DTControllers.csproj.CoreCompileInputs.cache
+E:\GitHub\NET CORE\DailyTool\DTController\obj\Debug\netcoreapp2.1\DTControllers.AssemblyInfoInputs.cache
+E:\GitHub\NET CORE\DailyTool\DTController\obj\Debug\netcoreapp2.1\DTControllers.AssemblyInfo.cs
+E:\GitHub\NET CORE\DailyTool\DTController\obj\Debug\netcoreapp2.1\DTControllers.csproj.CopyComplete
+E:\GitHub\NET CORE\DailyTool\DTController\obj\Debug\netcoreapp2.1\DTControllers.dll
+E:\GitHub\NET CORE\DailyTool\DTController\obj\Debug\netcoreapp2.1\DTControllers.pdb

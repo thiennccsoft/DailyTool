@@ -7,3 +7,12 @@ A:\Git\DailyTools\DTValueObjects\obj\Debug\netcoreapp2.1\DTValueObjects.Assembly
 A:\Git\DailyTools\DTValueObjects\obj\Debug\netcoreapp2.1\DTValueObjects.dll
 A:\Git\DailyTools\DTValueObjects\obj\Debug\netcoreapp2.1\DTValueObjects.pdb
 A:\Git\DailyTools\DTValueObjects\obj\Debug\netcoreapp2.1\DTValueObjects.csprojAssemblyReference.cache
+E:\GitHub\NET CORE\DailyTool\DTValueObjects\bin\Debug\netcoreapp2.1\DTValueObjects.deps.json
+E:\GitHub\NET CORE\DailyTool\DTValueObjects\bin\Debug\netcoreapp2.1\DTValueObjects.dll
+E:\GitHub\NET CORE\DailyTool\DTValueObjects\bin\Debug\netcoreapp2.1\DTValueObjects.pdb
+E:\GitHub\NET CORE\DailyTool\DTValueObjects\obj\Debug\netcoreapp2.1\DTValueObjects.csprojAssemblyReference.cache
+E:\GitHub\NET CORE\DailyTool\DTValueObjects\obj\Debug\netcoreapp2.1\DTValueObjects.csproj.CoreCompileInputs.cache
+E:\GitHub\NET CORE\DailyTool\DTValueObjects\obj\Debug\netcoreapp2.1\DTValueObjects.AssemblyInfoInputs.cache
+E:\GitHub\NET CORE\DailyTool\DTValueObjects\obj\Debug\netcoreapp2.1\DTValueObjects.AssemblyInfo.cs
+E:\GitHub\NET CORE\DailyTool\DTValueObjects\obj\Debug\netcoreapp2.1\DTValueObjects.dll
+E:\GitHub\NET CORE\DailyTool\DTValueObjects\obj\Debug\netcoreapp2.1\DTValueObjects.pdb

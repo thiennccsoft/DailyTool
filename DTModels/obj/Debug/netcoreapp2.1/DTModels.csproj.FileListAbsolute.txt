@@ -23,3 +23,17 @@ A:\Git\DailyTools\DTModels\bin\Debug\netcoreapp2.1\DTModels.pdb
 A:\Git\DailyTools\DTModels\bin\Debug\netcoreapp2.1\DTValueObjects.dll
 A:\Git\DailyTools\DTModels\bin\Debug\netcoreapp2.1\DTValueObjects.pdb
 A:\Git\DailyTools\DTModels\obj\Debug\netcoreapp2.1\DTModels.csproj.CopyComplete
+E:\GitHub\NET CORE\DailyTool\DTModels\bin\Debug\netcoreapp2.1\DTModels.deps.json
+E:\GitHub\NET CORE\DailyTool\DTModels\bin\Debug\netcoreapp2.1\DTModels.runtimeconfig.json
+E:\GitHub\NET CORE\DailyTool\DTModels\bin\Debug\netcoreapp2.1\DTModels.runtimeconfig.dev.json
+E:\GitHub\NET CORE\DailyTool\DTModels\bin\Debug\netcoreapp2.1\DTModels.dll
+E:\GitHub\NET CORE\DailyTool\DTModels\bin\Debug\netcoreapp2.1\DTModels.pdb
+E:\GitHub\NET CORE\DailyTool\DTModels\bin\Debug\netcoreapp2.1\DTValueObjects.dll
+E:\GitHub\NET CORE\DailyTool\DTModels\bin\Debug\netcoreapp2.1\DTValueObjects.pdb
+E:\GitHub\NET CORE\DailyTool\DTModels\obj\Debug\netcoreapp2.1\DTModels.csprojAssemblyReference.cache
+E:\GitHub\NET CORE\DailyTool\DTModels\obj\Debug\netcoreapp2.1\DTModels.csproj.CoreCompileInputs.cache
+E:\GitHub\NET CORE\DailyTool\DTModels\obj\Debug\netcoreapp2.1\DTModels.AssemblyInfoInputs.cache
+E:\GitHub\NET CORE\DailyTool\DTModels\obj\Debug\netcoreapp2.1\DTModels.AssemblyInfo.cs
+E:\GitHub\NET CORE\DailyTool\DTModels\obj\Debug\netcoreapp2.1\DTModels.csproj.CopyComplete
+E:\GitHub\NET CORE\DailyTool\DTModels\obj\Debug\netcoreapp2.1\DTModels.dll
+E:\GitHub\NET CORE\DailyTool\DTModels\obj\Debug\netcoreapp2.1\DTModels.pdb

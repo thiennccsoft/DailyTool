@@ -681,23 +681,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\shj\\.nuget\\packages\\": {},
+    "C:\\Users\\quand\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "A:\\Git\\DailyTool\\DTValueObjects\\DTValueObjects.csproj",
+      "projectUniqueName": "E:\\GitHub\\NET CORE\\DailyTool\\DTValueObjects\\DTValueObjects.csproj",
       "projectName": "DTValueObjects",
-      "projectPath": "A:\\Git\\DailyTool\\DTValueObjects\\DTValueObjects.csproj",
-      "packagesPath": "C:\\Users\\shj\\.nuget\\packages\\",
-      "outputPath": "A:\\Git\\DailyTool\\DTValueObjects\\obj\\",
+      "projectPath": "E:\\GitHub\\NET CORE\\DailyTool\\DTValueObjects\\DTValueObjects.csproj",
+      "packagesPath": "C:\\Users\\quand\\.nuget\\packages\\",
+      "outputPath": "E:\\GitHub\\NET CORE\\DailyTool\\DTValueObjects\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\shj\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\quand\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
