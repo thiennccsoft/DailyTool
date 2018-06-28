@@ -26,7 +26,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DTController\DTControllers.csproj" />
-    <ProjectReference Include="..\DTModels\DTModels.csproj" />
     <ProjectReference Include="..\DTValueObjects\DTValueObjects.csproj" />
   </ItemGroup>
 
