@@ -10,9 +10,8 @@ namespace DTValueObjects
         public string UserName { get; set; }
         public string PassWord { get; set; }
         public string Email { get; set; }
-        public DateTime? CreateAt { get; set; }
+        public DateTime CreateAt { get; set; }
         public Guid? ReportReceiver { get; set; }
         public int RoleId { get; set; }
-        
     }
 }

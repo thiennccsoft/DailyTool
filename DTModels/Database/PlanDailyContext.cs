@@ -26,8 +26,8 @@ namespace DTModels.Database
         {
             if (!optionsBuilder.IsConfigured)
             {
-//#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Server=SHJ-PC\\SQLEXPRESS;Database=PlanDaily;Trusted_Connection=True;user id=sa;password=123456;");
+                //#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
+                optionsBuilder.UseSqlServer("Server=ADMIN-PC\\SQLEXPRESS;Database=PlanDaily;Trusted_Connection=True;user id=sa;password=123456;");
             }
         }
 

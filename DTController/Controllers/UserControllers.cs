@@ -18,5 +18,21 @@ namespace DTControllers.Controllers
         {
             return uModel.Insert(user);
         }
+        public override bool Update(vUser user)
+        {
+            return uModel.Update(user);
+        }
+        public override bool Delete(vUser user)
+        {
+            return uModel.Delete(user);
+        }
+        public override vUser CheckLogin(vUser user)
+        {
+            return uModel.Checklogin(user);
+        }
+        public override bool CreateUser(vUser user)
+        {
+            return uModel.CreateUser(user);
+        }
     }
 }

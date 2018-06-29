@@ -28,7 +28,7 @@ namespace DTModels.Entities
         public string PassWord { get; set; }
 
         [Required]
-        public Guid ReportReciver { get; set; }
+        public Guid? ReportReciver { get; set; }
 
         [Required]
         [DataType(DataType.DateTime)]

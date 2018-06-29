@@ -26,3 +26,17 @@ E:\ThucTap\API\DailyTool\DTController\obj\Debug\netcoreapp2.1\DTControllers.Asse
 E:\ThucTap\API\DailyTool\DTController\obj\Debug\netcoreapp2.1\DTControllers.csproj.CopyComplete
 E:\ThucTap\API\DailyTool\DTController\obj\Debug\netcoreapp2.1\DTControllers.dll
 E:\ThucTap\API\DailyTool\DTController\obj\Debug\netcoreapp2.1\DTControllers.pdb
+F:\NCCSoft\ToolDaily\DailyTool\DTController\bin\Debug\netcoreapp2.1\DTControllers.deps.json
+F:\NCCSoft\ToolDaily\DailyTool\DTController\bin\Debug\netcoreapp2.1\DTControllers.dll
+F:\NCCSoft\ToolDaily\DailyTool\DTController\bin\Debug\netcoreapp2.1\DTControllers.pdb
+F:\NCCSoft\ToolDaily\DailyTool\DTController\bin\Debug\netcoreapp2.1\DTModels.dll
+F:\NCCSoft\ToolDaily\DailyTool\DTController\bin\Debug\netcoreapp2.1\DTValueObjects.dll
+F:\NCCSoft\ToolDaily\DailyTool\DTController\bin\Debug\netcoreapp2.1\DTModels.pdb
+F:\NCCSoft\ToolDaily\DailyTool\DTController\bin\Debug\netcoreapp2.1\DTValueObjects.pdb
+F:\NCCSoft\ToolDaily\DailyTool\DTController\obj\Debug\netcoreapp2.1\DTControllers.csprojAssemblyReference.cache
+F:\NCCSoft\ToolDaily\DailyTool\DTController\obj\Debug\netcoreapp2.1\DTControllers.csproj.CoreCompileInputs.cache
+F:\NCCSoft\ToolDaily\DailyTool\DTController\obj\Debug\netcoreapp2.1\DTControllers.AssemblyInfoInputs.cache
+F:\NCCSoft\ToolDaily\DailyTool\DTController\obj\Debug\netcoreapp2.1\DTControllers.AssemblyInfo.cs
+F:\NCCSoft\ToolDaily\DailyTool\DTController\obj\Debug\netcoreapp2.1\DTControllers.csproj.CopyComplete
+F:\NCCSoft\ToolDaily\DailyTool\DTController\obj\Debug\netcoreapp2.1\DTControllers.dll
+F:\NCCSoft\ToolDaily\DailyTool\DTController\obj\Debug\netcoreapp2.1\DTControllers.pdb

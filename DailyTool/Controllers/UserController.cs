@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using DTValueObjects;
 using DTControllers.Controllers;
+using AutoMapper;
+using DTValueObjects.ViewModels;
 
 namespace DailyTool.Controllers
 {
@@ -13,14 +15,14 @@ namespace DailyTool.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        //GET: api/User
-       [HttpGet]
-        public IEnumerable<vUser> Get()
-        {
-            UserControllers uControl = new UserControllers();
-            var listU = uControl.Getall();
-            return listU;
-        }
+        private UserControllers controller = new UserControllers();       
+        //[HttpGet]
+        //public IEnumerable<vUser> Get()
+        //{
+        //    UserControllers uControl = new UserControllers();
+        //    var listU = uControl.Getall();
+        //    return listU;
+        //}
         // GET: api/User
         //[HttpGet]
         //public bool Post()
@@ -46,23 +48,29 @@ namespace DailyTool.Controllers
         //}
 
         // POST: api/User
+        //tested
         [HttpPost]
-        public void Post([FromBody] string value)
+        public IActionResult Post([FromBody]RegisterViewModel model)
         {
+            vUser vUser = new vUser
+            {
+                UserName = model.UserName,
+                PassWord = model.PassWord,
+                ReportReceiver = model.ReportReceiver,
+                Email = model.Email
+            };
+            if (controller.CreateUser(vUser))
+                return new OkObjectResult("Account success");
+            else return new OkObjectResult("Failed");
         }
-        
-
+        //tested need id in url
         // PUT: api/User/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public vUser Put([FromBody] vUser vUser)
         {
+            controller.Update(vUser);
+            return vUser;
         }
-
-        // DELETE: api/ApiWithActions/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-
-        }
+        
     }
 }

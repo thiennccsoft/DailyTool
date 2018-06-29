@@ -11,5 +11,8 @@ namespace DTControllers.BaseControllers
         public virtual bool Insert(T user) { return false; }
         public virtual bool Update(T user) { return false; }
         public virtual bool Delete(T user) { return false; }
+        public virtual T CheckLogin(T user) { return user; }
+        public virtual bool CreateUser(T user) { return false; }
+
     }
 }
