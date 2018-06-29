@@ -1,9 +1,0 @@
-A:\Git\DailyTools\DTValueObjects\bin\Debug\netcoreapp2.1\DTValueObjects.deps.json
-A:\Git\DailyTools\DTValueObjects\bin\Debug\netcoreapp2.1\DTValueObjects.dll
-A:\Git\DailyTools\DTValueObjects\bin\Debug\netcoreapp2.1\DTValueObjects.pdb
-A:\Git\DailyTools\DTValueObjects\obj\Debug\netcoreapp2.1\DTValueObjects.csproj.CoreCompileInputs.cache
-A:\Git\DailyTools\DTValueObjects\obj\Debug\netcoreapp2.1\DTValueObjects.AssemblyInfoInputs.cache
-A:\Git\DailyTools\DTValueObjects\obj\Debug\netcoreapp2.1\DTValueObjects.AssemblyInfo.cs
-A:\Git\DailyTools\DTValueObjects\obj\Debug\netcoreapp2.1\DTValueObjects.dll
-A:\Git\DailyTools\DTValueObjects\obj\Debug\netcoreapp2.1\DTValueObjects.pdb
-A:\Git\DailyTools\DTValueObjects\obj\Debug\netcoreapp2.1\DTValueObjects.csprojAssemblyReference.cache
