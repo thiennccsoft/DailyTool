@@ -1,7 +1,9 @@
+using DTModels.Database;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -20,6 +22,8 @@ namespace DailyTool
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            var connection = @"Server=.\SQLEXPRESS;Database=PlanDaily;Trusted_Connection=True;User Id=sa;Password=123456;";
+            services.AddDbContext<PlanDailyContext>(options => options.UseSqlServer(connection));
 
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
@@ -31,6 +35,11 @@ namespace DailyTool
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
+            {
+                var context = serviceScope.ServiceProvider.GetRequiredService<PlanDailyContext>();
+                context.Database.EnsureCreated();
+            }
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
