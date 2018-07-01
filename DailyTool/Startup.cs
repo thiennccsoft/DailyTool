@@ -22,7 +22,7 @@ namespace DailyTool
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            var connection = @"Server=.\SQLEXPRESS;Database=PlanDaily;Trusted_Connection=True;User Id=sa;Password=123456;";
+            var connection = @"Server=.;Database=PlanDaily;Trusted_Connection=True;User Id=sa;Password=123456;";
             services.AddDbContext<PlanDailyContext>(options => options.UseSqlServer(connection));
 
             // In production, the Angular files will be served from this directory

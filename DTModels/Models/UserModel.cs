@@ -94,16 +94,21 @@ namespace DTModels.Models
         public override bool Update(vUsers user)
         {
             Users nuser = db.Users.ToList().Find(x => x.UserId == user.UserId);            
-            db.Attach(nuser);
-            nuser = changetoUser(user);
-            db.Entry(nuser).State = EntityState.Modified;
+            nuser.UserName = user.UserName;
+            nuser.PassWord = user.PassWord;
+            nuser.Email = user.Email;
+            nuser.Created_At = user.Created_At;
+            nuser.ReportReciver = user.ReportReciver;
+            nuser.RoleId = user.RoleId;
             db.SaveChanges();
 
             return true;
         }
         public override bool Delete(vUsers user)
         {
-            Users nuser = changetoUser(user);
+
+            //Users nuser = changetoUser(user);
+            Users nuser = db.Users.ToList().Find(x => x.UserId == user.UserId);
             db.Users.Remove(nuser);
             db.SaveChanges();
             return true;
