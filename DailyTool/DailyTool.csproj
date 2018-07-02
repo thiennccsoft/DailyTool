@@ -15,7 +15,10 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="2.1.1" />
+<<<<<<< HEAD:DailyTool/DailyTool.csproj
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
+=======
+>>>>>>> master:DailyTool/DailyTool.csproj
   </ItemGroup>
 
   <ItemGroup>
@@ -25,7 +28,11 @@
   </ItemGroup>
 
   <ItemGroup>
+<<<<<<< HEAD:DailyTool/DailyTool.csproj
     <ProjectReference Include="..\DTController\DTControllers.csproj" />
+=======
+    <ProjectReference Include="..\DTBLL\DTBLL.csproj" />
+>>>>>>> master:DailyTool/DailyTool.csproj
     <ProjectReference Include="..\DTValueObjects\DTValueObjects.csproj" />
   </ItemGroup>
 

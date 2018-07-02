@@ -5,29 +5,21 @@ using DTModels.Database;
 
 namespace DTModels.BaseModels
 {
-<<<<<<< HEAD
-    class BaseReport<T>
-    {
-        protected PlanDailyContext db = new PlanDailyContext();
-        public virtual bool Insert(T user) { return false; }
-        public virtual bool Delete(T user) { return false; }
-=======
-    public class BaseReport<T>
+    public class BaseItem<T>
     {
         protected PlanDailyContext db = new PlanDailyContext();
         public virtual List<T> GetAll() { List<T> list = new List<T>(); return list; }
         public virtual List<T> GetbyPaging(int pageIndex, int pageSize) { return new List<T>(); }
-        public virtual bool Insert(T RePort)
+        public virtual bool Insert(T Item)
         { return false; }
-        public virtual bool Update(T RePort)
+        public virtual bool Update(T Item)
         { return false; }
 
-        public virtual bool Delete(T RePort)
+        public virtual bool Delete(T Item)
         { return false; }
-        public virtual T GetbyId(T RePort)
+        public virtual T GetbyId(T Item)
         {
-            return RePort;
+            return Item;
         }
->>>>>>> master
     }
 }
