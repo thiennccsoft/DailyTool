@@ -704,11 +704,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\SSSc\\Documents\\GitHub\\DailyTool\\DTController\\DTControllers.csproj",
-      "projectName": "DTControllers",
-      "projectPath": "C:\\Users\\SSSc\\Documents\\GitHub\\DailyTool\\DTController\\DTControllers.csproj",
+      "projectUniqueName": "C:\\Users\\SSSc\\Documents\\GitHub\\DailyTool\\DTBLL\\DTBLL.csproj",
+      "projectName": "DTBLL",
+      "projectPath": "C:\\Users\\SSSc\\Documents\\GitHub\\DailyTool\\DTBLL\\DTBLL.csproj",
       "packagesPath": "C:\\Users\\SSSc\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\SSSc\\Documents\\GitHub\\DailyTool\\DTController\\obj\\",
+      "outputPath": "C:\\Users\\SSSc\\Documents\\GitHub\\DailyTool\\DTBLL\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
