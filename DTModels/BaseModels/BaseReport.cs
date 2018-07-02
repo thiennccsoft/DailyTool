@@ -5,13 +5,6 @@ using DTModels.Database;
 
 namespace DTModels.BaseModels
 {
-<<<<<<< HEAD
-    class BaseReport<T>
-    {
-        protected PlanDailyContext db = new PlanDailyContext();
-        public virtual bool Insert(T user) { return false; }
-        public virtual bool Delete(T user) { return false; }
-=======
     public class BaseReport<T>
     {
         protected PlanDailyContext db = new PlanDailyContext();
@@ -28,6 +21,5 @@ namespace DTModels.BaseModels
         {
             return RePort;
         }
->>>>>>> master
     }
 }
