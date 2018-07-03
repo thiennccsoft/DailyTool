@@ -27,7 +27,7 @@ namespace DTModels.Database
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
-                optionsBuilder.UseSqlServer(@"Server=.\SQLEXPRESS;Database=PlanDaily;Trusted_Connection=True;User Id=sa;Password=123456;");
+                optionsBuilder.UseSqlServer(@"Server=.;Database=PlanDaily;Trusted_Connection=True;User Id=sa;Password=123456;");
         }
     }
 }
