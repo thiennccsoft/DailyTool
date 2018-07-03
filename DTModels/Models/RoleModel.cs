@@ -34,9 +34,10 @@ namespace DTModels.Models
         public override bool Update(vRoles usroleer)
         {
             Roles nrole = db.Roles.ToList().Find(x => x.RoleId == usroleer.RoleId);
-            db.Attach(nrole);
-            nrole = changetoRole(usroleer);
-            db.Entry(nrole).State = EntityState.Modified;
+            //db.Attach(nrole);
+            //nrole = changetoRole(usroleer);
+            //db.Entry(nrole).State = EntityState.Modified;
+            nrole.RoleName = usroleer.RoleName;
             db.SaveChanges();
 
             return true;
@@ -48,9 +49,9 @@ namespace DTModels.Models
             db.SaveChanges();
             return true;
         }
-        public override vRoles GetbyId(vRoles role)
+        public vRoles GetbyId(int roleid)
         {
-            var kq = db.Roles.ToList().Find(x => x.RoleId == role.RoleId);
+            var kq = db.Roles.ToList().Find(x => x.RoleId == roleid);
             vRoles nrole = new vRoles();
             nrole = changetovRole(kq);
 
@@ -67,7 +68,7 @@ namespace DTModels.Models
         {
             vRoles nrole = new vRoles();
             nrole.RoleId = role.RoleId;
-            nrole.RoleName = role.RoleName; ;
+            nrole.RoleName = role.RoleName;
             
             return nrole;
         }

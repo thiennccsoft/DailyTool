@@ -26,31 +26,32 @@ namespace DTModels.Models
         }
         public override List<vUsers> GetbyPaging(int pageIndex, int pageSize)
         {
-            int rc = 0;
-            var listUser = from t in (db.Users.OrderBy(x => x.UserName).Distinct().ToList())
-                           select new
-                           {
-                               RowNumber = ++rc,
-                               t.UserId,
-                               t.UserName,
-                               t.PassWord,
-                               t.Email,
-                               t.Created_At,
-                               t.ReportReciver,
-                               t.RoleId
-                           };
-            var listab = from i in listUser
-                         where i.RowNumber > pageIndex && i.RowNumber <= (pageIndex + pageSize)
-                         select new
-                         {
-                             i.UserId,
-                             i.UserName,
-                             i.PassWord,
-                             i.Email,
-                             i.Created_At,
-                             i.ReportReciver,
-                             i.RoleId
-                         };
+            //int rc = 0;
+            var listab = db.Users.OrderBy(x => x.UserName).Skip(pageIndex * pageSize).Take(pageSize).ToList();
+            //var listUser = from t in (db.Users.OrderBy(x => x.UserName).Distinct().ToList())
+            //               select new
+            //               {
+            //                   RowNumber = ++rc,
+            //                   t.UserId,
+            //                   t.UserName,
+            //                   t.PassWord,
+            //                   t.Email,
+            //                   t.Created_At,
+            //                   t.ReportReciver,
+            //                   t.RoleId
+            //               };
+            //var listab = from i in listUser
+            //             where i.RowNumber > pageIndex && i.RowNumber <= (pageIndex * pageSize)
+            //             select new
+            //             {
+            //                 i.UserId,
+            //                 i.UserName,
+            //                 i.PassWord,
+            //                 i.Email,
+            //                 i.Created_At,
+            //                 i.ReportReciver,
+            //                 i.RoleId
+            //             };
             List<vUsers> listU = new List<vUsers>();
             foreach (var item in listab)
             {
@@ -67,17 +68,17 @@ namespace DTModels.Models
             }
             return listU;
         }
-        public override vUsers CheckLogin(vUsers user)
+        public  vUsers CheckLogin(string username, string password)
         {
-            var kq = db.Users.ToList().Find(x => x.UserName == user.UserName && x.PassWord == user.PassWord);
+            var kq = db.Users.ToList().Find(x => x.UserName == username && x.PassWord == password);
             vUsers nuser = new vUsers();
             nuser = changetovUser(kq);
 
             return nuser;
         }
-        public override vUsers GetbyId(vUsers user)
+        public  vUsers GetbyId(Guid userid)
         {
-            var kq = db.Users.ToList().Find(x => x.UserId == user.UserId);
+            var kq = db.Users.ToList().Find(x => x.UserId == userid);
             vUsers nuser = new vUsers();
             nuser = changetovUser(kq);
 
@@ -93,10 +94,15 @@ namespace DTModels.Models
         }
         public override bool Update(vUsers user)
         {
-            Users nuser = db.Users.ToList().Find(x => x.UserId == user.UserId);            
-            db.Attach(nuser);
-            nuser = changetoUser(user);
-            db.Entry(nuser).State = EntityState.Modified;
+            Users nuser = db.Users.ToList().Find(x => x.UserId == user.UserId);
+            //db.Attach(nuser);
+            //nuser = changetoUser(user);
+            //db.Entry(nuser).State = EntityState.Modified;
+            nuser.UserName = user.UserName;
+            nuser.PassWord = user.PassWord;
+            nuser.Email = user.Email;
+            nuser.ReportReciver = user.ReportReciver;
+            nuser.RoleId = user.RoleId;
             db.SaveChanges();
 
             return true;

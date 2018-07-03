@@ -64,9 +64,9 @@ namespace DTModels.Models
             }
             return listI;
         }
-        public override vItems GetbyId(vItems Item)
+        public  vItems GetbyId(Guid Itemid)
         {
-            var kq = db.Items.ToList().Find(x => x.ItemId == Item.ItemId);
+            var kq = db.Items.ToList().Find(x => x.ItemId == Itemid);
             vItems nitem = new vItems();
             nitem = changetovItem(kq);
 
@@ -82,9 +82,13 @@ namespace DTModels.Models
         public override bool Update(vItems Item)
         {
             Items nitem = db.Items.ToList().Find(x => x.ItemId == Item.ItemId);
-            db.Attach(nitem);
-            nitem = changetoItem(Item);
-            db.Entry(nitem).State = EntityState.Modified;
+            //db.Attach(nitem);
+            //nitem = changetoItem(Item);
+            //db.Entry(nitem).State = EntityState.Modified;
+            nitem.Title = Item.Title;
+            nitem.Description = Item.Description;
+            nitem.Status = Item.Status;
+            nitem.Finish_At = Item.Finish_At;
             db.SaveChanges();
             return true;
         }

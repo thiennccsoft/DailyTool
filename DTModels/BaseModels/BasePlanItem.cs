@@ -14,9 +14,6 @@ namespace DTModels.BaseModels
 
         public virtual bool Delete(T PI)
         { return false; }
-        public virtual T GetbyId(T PI)
-        {
-            return PI;
-        }
+
     }
 }

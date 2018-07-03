@@ -24,9 +24,9 @@ namespace DTModels.Models
             }
             return listrp;
         }
-        public override vReports GetbyId(vReports rePort)
+        public  vReports GetbyId(Guid rePortid)
         {
-            var kq = db.Reports.ToList().Find(x => x.ReportId == rePort.ReportId);
+            var kq = db.Reports.ToList().Find(x => x.ReportId == rePortid);
             vReports vreport = new vReports();
             vreport = changetovReport(kq);
 
@@ -79,9 +79,12 @@ namespace DTModels.Models
         public override bool Update(vReports RePort)
         {
             Reports report = db.Reports.ToList().Find(x => x.ReportId == RePort.ReportId);
-            db.Attach(report);
-            report = changetoReport(RePort);
-            db.Entry(report).State = EntityState.Modified;
+            //db.Attach(report);
+            //report = changetoReport(RePort);
+            //db.Entry(report).State = EntityState.Modified;
+            report.Title = RePort.Title;
+            report.Description = RePort.Description;
+            report.Issue = RePort.Issue;
             db.SaveChanges();
             return true;
         }
