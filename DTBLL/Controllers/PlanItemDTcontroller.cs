@@ -15,7 +15,7 @@ namespace DTBLL.Controllers
             return pi.GetAll();
 
         }
-        public override vPlanItems GetbyId(vPlanItems PI)
+        public vPlanItems GetbyId(Guid PI)
         {
             return pi.GetbyId(PI);
         }

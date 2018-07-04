@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using DTBLL.Controllers;
 using DTValueObjects;
 using DTValueObjects.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,6 +16,15 @@ namespace DailyTool.Controllers
     public class UserController : ControllerBase
     {
         UserDTcontroller controller = new UserDTcontroller();
+        [HttpGet("getall")]
+        public IEnumerable<vUsers> GetAll(int pageIndex=0)
+        {
+            var total_count = controller.GetAll().Count;
+            var pageSize = 5;
+            var list = controller.GetbyPaging(pageIndex, pageSize);
+            
+            return list;
+        }
         [HttpPost]
         public IActionResult Post([FromBody] RegisterViewModel model)
         {
@@ -36,13 +46,6 @@ namespace DailyTool.Controllers
         {
             controller.Update(vUser);
             return vUser;
-        }
-        [HttpDelete]
-        public IActionResult Delete([FromBody] vUsers vUser)
-        {
-            if (controller.Delete(vUser))
-                return new OkObjectResult("deleted");
-            else return new OkObjectResult("failed");
         }
     }
 }

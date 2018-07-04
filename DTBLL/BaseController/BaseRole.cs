@@ -14,9 +14,5 @@ namespace DTBLL.BaseController
 
         public virtual bool Delete(T role)
         { return false; }
-        public virtual T GetbyId(T role)
-        {
-            return role;
-        }
     }
 }

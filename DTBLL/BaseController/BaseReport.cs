@@ -15,9 +15,5 @@ namespace DTBLL.BaseController
 
         public virtual bool Delete(T RePort)
         { return false; }
-        public virtual T GetbyId(T RePort)
-        {
-            return RePort;
-        }
     }
 }

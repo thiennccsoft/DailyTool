@@ -64,9 +64,9 @@ namespace DTModels.Models
             }
             return listI;
         }
-        public override vItems GetbyId(vItems Item)
+        public vItems GetbyId(Guid Itemid)
         {
-            var kq = db.Items.ToList().Find(x => x.ItemId == Item.ItemId);
+            var kq = db.Items.ToList().Find(x => x.ItemId == Itemid);
             vItems nitem = new vItems();
             nitem = changetovItem(kq);
 

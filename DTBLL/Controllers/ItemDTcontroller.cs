@@ -18,7 +18,7 @@ namespace DTBLL.Controllers
         {
             return it.GetbyPaging(pageIndex, pageSize);
         }
-        public override vItems GetbyId(vItems Item)
+        public vItems GetbyId(Guid Item)
         {
             return it.GetbyId(Item);
         }
