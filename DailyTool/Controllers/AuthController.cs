@@ -48,17 +48,6 @@ namespace DailyTool.Controllers
                 PassWord = model.PassWord
             };
             var userCheck = controller.CheckLogin(user);
-            //var header = Request.Headers["Authorization"];
-            //if (header.ToString().StartsWith("Basic"))
-            //{
-            //    var credValue = header.ToString().Substring("Basic ".Length).Trim();
-            //    var usernameAndPassenc = Encoding.UTF8.GetString(Convert.FromBase64String(credValue));
-            //    var usernameAndPass = usernameAndPassenc.Split(":");
-            //    //check database
-            //    //if(usernameAndPass[0] == "ducanh059@gmail.com" && usernameAndPass[1] == "ducanh97")
-                
-            //}
-            
             if (userCheck != null)
             {
                 int dt = controller.getUserByUserName(user.UserName).RoleId;
