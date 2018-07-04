@@ -24,9 +24,9 @@ namespace DTModels.Models
             }
             return listrp;
         }
-        public override vReports GetbyId(vReports rePort)
+        public vReports GetbyId(Guid rePortid)
         {
-            var kq = db.Reports.ToList().Find(x => x.ReportId == rePort.ReportId);
+            var kq = db.Reports.ToList().Find(x => x.ReportId == rePortid);
             vReports vreport = new vReports();
             vreport = changetovReport(kq);
 

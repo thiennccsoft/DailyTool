@@ -15,17 +15,17 @@ namespace DTBLL.Controllers
         {
             return udm.GetAll();
         }
-        public override vUsers CheckLogin(vUsers user)
+        public vUsers CheckLogin(string username, string password)
         {
-            return udm.CheckLogin(user);
+            return udm.CheckLogin(username, password);
         }
         public override List<vUsers> GetbyPaging(int pageIndex, int pageSize)
         {
             return udm.GetbyPaging(pageIndex, pageSize);
         }
-        public override vUsers GetbyId(vUsers user)
+        public vUsers GetbyId(Guid userid)
         {
-            return udm.GetbyId(user);
+            return udm.GetbyId(userid);
         }
         public override bool Insert(vUsers user)
         {

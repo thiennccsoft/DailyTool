@@ -14,7 +14,7 @@ namespace DTBLL.Controllers
         {
             return pl.GetAll();
         }
-        public override vPlans GetbyId(vPlans plan)
+        public vPlans GetbyId(Guid plan)
         {
             return pl.GetbyId(plan);
         }

@@ -58,9 +58,9 @@ namespace DTModels.Models
             }
             return listP;
         }
-        public override vPlans GetbyId(vPlans plan)
+        public vPlans GetbyId(Guid planid)
         {
-            var kq = db.Plans.ToList().Find(x => x.PlanId == plan.PlanId);
+            var kq = db.Plans.ToList().Find(x => x.PlanId == planid);
             vPlans nplan = new vPlans();
             nplan = changetovPlan(kq);
             return nplan;

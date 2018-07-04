@@ -24,9 +24,9 @@ namespace DTModels.Models
             }
             return listPI;
         }
-        public override vPlanItems GetbyId(vPlanItems PI)
+        public vPlanItems GetbyId(Guid PIid)
         {
-            var kq = db.Plan_Items.ToList().Find(x => x.Plan_ItemId == PI.Plan_ItemId);
+            var kq = db.Plan_Items.ToList().Find(x => x.Plan_ItemId == PIid);
             vPlanItems nplanit = new vPlanItems();
             nplanit = changetovPlanItem(kq);
 

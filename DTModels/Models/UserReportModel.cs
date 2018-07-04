@@ -24,9 +24,9 @@ namespace DTModels.Models
             }
             return listUrp;
         }
-        public override vUserReports GetbyId(vUserReports UR)
+        public vUserReports GetbyId(Guid id)
         {
-            var kq = db.User_Reports.ToList().Find(x => x.User_report_Id == UR.User_report_Id);
+            var kq = db.User_Reports.ToList().Find(x => x.User_report_Id == id);
             vUserReports nurp = new vUserReports();
             nurp = changetovUserRP(kq);
 

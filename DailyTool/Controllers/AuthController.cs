@@ -12,7 +12,13 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+<<<<<<< HEAD
 using Microsoft.IdentityModel.Tokens;
+=======
+using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
+
+>>>>>>> Hue
 namespace DailyTool.Controllers
 {
     [Route("api/[controller]")]
@@ -20,18 +26,19 @@ namespace DailyTool.Controllers
     public class AuthController : ControllerBase
     {
         UserDTcontroller controller = new UserDTcontroller();
+<<<<<<< HEAD
         RoleDTcotroller role = new RoleDTcotroller();
         [HttpPost("login")]
         public IActionResult Login([FromBody] LoginViewModel model)
+=======
+        RoleDTcotroller roleDT = new RoleDTcotroller();
+        private IConfiguration _config;
+
+        public AuthController(IConfiguration config)
         {
-            vUsers user = new vUsers
-            {
-                UserName = model.UserName,
-                PassWord = model.PassWord
-            };
-            var userCheck = controller.CheckLogin(user);
-            return new OkObjectResult(userCheck);
+            _config = config;
         }
+        
         [HttpPost("token")]
         public IActionResult Token([FromBody] LoginViewModel model)
         {
@@ -76,6 +83,33 @@ namespace DailyTool.Controllers
             }
             else
             return BadRequest("Wrong");
+        }
+        //create token
+        private string BuildToken(vUsers user)
+        {
+            var nameRole = roleDT.GetbyId(user.RoleId);
+            var claimData = new[] { new Claim(nameRole.RoleName, user.RoleId.ToString()) };
+            //
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
+            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+
+            var token = new JwtSecurityToken(_config["Jwt:Issuer"],
+              _config["Jwt:Issuer"],
+              claimData,
+              expires: DateTime.Now,
+              signingCredentials: creds);
+
+            return new JwtSecurityTokenHandler().WriteToken(token);
+        }
+        
+        [HttpPost("create-user"), Authorize(Policy ="Admin")]
+        public IActionResult CreateUser(vUsers vUser)
+        {
+            vUser.Created_At = DateTime.Now.Date;
+            
+            if (controller.Insert(vUser))
+                return new OkObjectResult("Create user success");
+            else return new OkObjectResult("Failed");
         }
     }
 }

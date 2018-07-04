@@ -48,9 +48,9 @@ namespace DTModels.Models
             db.SaveChanges();
             return true;
         }
-        public vRoles GetbyId(int role)
+        public vRoles GetbyId(int roleid)
         {
-            var kq = db.Roles.ToList().Find(x => x.RoleId == role);
+            var kq = db.Roles.ToList().Find(x => x.RoleId == roleid);
             vRoles nrole = new vRoles();
             nrole = changetovRole(kq);
 
