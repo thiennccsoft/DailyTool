@@ -39,5 +39,9 @@ namespace DTBLL.Controllers
         {
             return udm.Delete(user);
         }
+        public vUsers getUserByUserName(string user)
+        {
+            return udm.getUserByUserName(user);
+        }
     }
 }

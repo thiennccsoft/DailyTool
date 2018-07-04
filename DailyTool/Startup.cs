@@ -1,4 +1,5 @@
 using DTModels.Database;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -6,6 +7,8 @@ using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 namespace DailyTool
 {
@@ -24,6 +27,27 @@ namespace DailyTool
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             var connection = @"Server=.;Database=PlanDaily;Trusted_Connection=True;User Id=sa;Password=123456;";
             services.AddDbContext<PlanDailyContext>(options => options.UseSqlServer(connection));
+            //
+
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
+            {
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateIssuerSigningKey = true,
+                    ValidIssuer = "mysite.com",
+                    ValidAudience="mysite.com",
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("Anhzxcjjqiuvqinqmjahduuduuduudullllllllllllllllllfllflflff"))
+            };
+            });
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("Admin", policy => policy.RequireClaim("Admin", "1"));
+                options.AddPolicy("Employee", policy => policy.RequireClaim("Employee", "2"));
+                options.AddPolicy("Manager", policy => policy.RequireClaim("Manager", "3"));
+                options.AddPolicy("AE", policy => policy.RequireRole("Admin", "Employee"));
+            });
 
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
@@ -35,6 +59,7 @@ namespace DailyTool
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            app.UseAuthentication();
             using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
             {
                 var context = serviceScope.ServiceProvider.GetRequiredService<PlanDailyContext>();
@@ -51,7 +76,6 @@ namespace DailyTool
 
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
-
             app.UseMvc(routes =>
             {
                 routes.MapRoute(

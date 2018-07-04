@@ -70,10 +70,18 @@ namespace DTModels.Models
         public override vUsers CheckLogin(vUsers user)
         {
             var kq = db.Users.ToList().Find(x => x.UserName == user.UserName && x.PassWord == user.PassWord);
-            vUsers nuser = new vUsers();
-            nuser = changetovUser(kq);
-
-            return nuser;
+            if(kq!= null)
+            {
+                vUsers nuser = new vUsers();
+                nuser = changetovUser(kq);
+                return nuser;
+            }
+            return null;
+        }
+        public vUsers getUserByUserName(string user)
+        {
+            Users users = db.Users.SingleOrDefault(x => x.UserName == user);
+            return changetovUser(users); ;
         }
         public override vUsers GetbyId(vUsers user)
         {
