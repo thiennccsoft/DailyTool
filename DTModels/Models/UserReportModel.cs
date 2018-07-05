@@ -63,5 +63,6 @@ namespace DTModels.Models
             nuserrp.ReportId = userrp.ReportId;
             return nuserrp;
         }
+        
     }
 }

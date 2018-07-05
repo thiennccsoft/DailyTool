@@ -121,5 +121,17 @@ namespace DTModels.Models
             nitem.Finish_At = item.Finish_At;
             return nitem;
         }
+        
+        public List<vItems> getItemsNotFinish()
+        {
+            var lst = db.Items.Where(a => a.Status == 0);
+            List<vItems> result = new List<vItems>();
+            foreach (var item in lst)
+            {
+                result.Add(changetovItem(item));
+            }
+            return result;
+        }
+
     }
 }

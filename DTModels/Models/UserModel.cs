@@ -138,5 +138,30 @@ namespace DTModels.Models
             nuser.RoleId = user.RoleId;
             return nuser;
         }
+
+        public List<vUsers> getUsersNotReport()
+        {
+            IEnumerable<Users> lst = db.Users.Where(a => !db.User_Reports.Any(r => r.UserId == a.UserId));
+            List<vUsers> result = new List<vUsers>();
+            foreach (Users item in lst)
+            {
+                result.Add(changetovUser(item));
+            }
+            return result;
+        }
+
+        public List<vUsers> getAdmins()
+        {
+            var lst = from users in db.Users
+                      from roles in db.Roles
+                      where users.RoleId == roles.RoleId && roles.RoleName == "Admin"
+                      select users;
+            List<vUsers> result = new List<vUsers>();
+            foreach (var item in lst)
+            {
+                result.Add(changetovUser(item));
+            }
+            return result;
+        }
     }
 }

@@ -34,5 +34,10 @@ namespace DTBLL.Controllers
         {
             return it.Delete(Item);
         }
+
+        public List<vItems> getItemsNotFinish()
+        {
+            return it.getItemsNotFinish();
+        }
     }
 }

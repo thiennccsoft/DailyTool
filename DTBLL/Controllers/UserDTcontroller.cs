@@ -39,5 +39,10 @@ namespace DTBLL.Controllers
         {
             return udm.Delete(user);
         }
+
+        public List<vUsers> getUsersNotReport()
+        {
+            return udm.getUsersNotReport();
+        }
     }
 }
