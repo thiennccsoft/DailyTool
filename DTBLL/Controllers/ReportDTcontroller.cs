@@ -18,7 +18,11 @@ namespace DTBLL.Controllers
         {
             return rp.GetbyPaging(pageIndex, pageSize);
         }
+<<<<<<< HEAD
         public vReports GetbyId(Guid RePort)
+=======
+        public  vReports GetbyId(Guid RePort)
+>>>>>>> Quan
         {
             return rp.GetbyId(RePort);
         }

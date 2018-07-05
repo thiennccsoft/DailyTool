@@ -16,7 +16,11 @@
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Authorization" Version="2.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="2.1.1" />
+<<<<<<< HEAD
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
+=======
+    <PackageReference Include="Quartz" Version="3.0.5" />
+>>>>>>> Quan
   </ItemGroup>
 
   <ItemGroup>

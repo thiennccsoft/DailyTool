@@ -15,7 +15,11 @@ namespace DTBLL.Controllers
             return pi.GetAll();
 
         }
+<<<<<<< HEAD
         public vPlanItems GetbyId(Guid PI)
+=======
+        public  vPlanItems GetbyId(Guid PI)
+>>>>>>> Quan
         {
             return pi.GetbyId(PI);
         }

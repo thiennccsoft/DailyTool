@@ -15,7 +15,11 @@ namespace DTBLL.Controllers
         {
             return udm.GetAll();
         }
+<<<<<<< HEAD
         public vUsers CheckLogin(string username, string password)
+=======
+        public  vUsers CheckLogin(string username, string password)
+>>>>>>> Quan
         {
             return udm.CheckLogin(username, password);
         }
@@ -23,7 +27,11 @@ namespace DTBLL.Controllers
         {
             return udm.GetbyPaging(pageIndex, pageSize);
         }
+<<<<<<< HEAD
         public vUsers GetbyId(Guid userid)
+=======
+        public  vUsers GetbyId(Guid userid)
+>>>>>>> Quan
         {
             return udm.GetbyId(userid);
         }
@@ -39,9 +47,16 @@ namespace DTBLL.Controllers
         {
             return udm.Delete(user);
         }
+<<<<<<< HEAD
         public vUsers getUserByUserName(string user)
         {
             return udm.getUserByUserName(user);
+=======
+
+        public List<vUsers> getUsersNotReport()
+        {
+            return udm.getUsersNotReport();
+>>>>>>> Quan
         }
     }
 }

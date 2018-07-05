@@ -14,7 +14,11 @@ namespace DTBLL.Controllers
         {
             return pl.GetAll();
         }
+<<<<<<< HEAD
         public vPlans GetbyId(Guid plan)
+=======
+        public  vPlans GetbyId(Guid plan)
+>>>>>>> Quan
         {
             return pl.GetbyId(plan);
         }

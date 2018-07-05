@@ -64,7 +64,11 @@ namespace DTModels.Models
             }
             return listI;
         }
+<<<<<<< HEAD
         public vItems GetbyId(Guid Itemid)
+=======
+        public  vItems GetbyId(Guid Itemid)
+>>>>>>> Quan
         {
             var kq = db.Items.ToList().Find(x => x.ItemId == Itemid);
             vItems nitem = new vItems();
@@ -82,9 +86,13 @@ namespace DTModels.Models
         public override bool Update(vItems Item)
         {
             Items nitem = db.Items.ToList().Find(x => x.ItemId == Item.ItemId);
-            db.Attach(nitem);
-            nitem = changetoItem(Item);
-            db.Entry(nitem).State = EntityState.Modified;
+            //db.Attach(nitem);
+            //nitem = changetoItem(Item);
+            //db.Entry(nitem).State = EntityState.Modified;
+            nitem.Title = Item.Title;
+            nitem.Description = Item.Description;
+            nitem.Status = Item.Status;
+            nitem.Finish_At = Item.Finish_At;
             db.SaveChanges();
             return true;
         }
@@ -117,5 +125,17 @@ namespace DTModels.Models
             nitem.Finish_At = item.Finish_At;
             return nitem;
         }
+        
+        public List<vItems> getItemsNotFinish()
+        {
+            var lst = db.Items.Where(a => a.Status == 0);
+            List<vItems> result = new List<vItems>();
+            foreach (var item in lst)
+            {
+                result.Add(changetovItem(item));
+            }
+            return result;
+        }
+
     }
 }

@@ -24,7 +24,11 @@ namespace DTModels.Models
             }
             return listPI;
         }
+<<<<<<< HEAD
         public vPlanItems GetbyId(Guid PIid)
+=======
+        public  vPlanItems GetbyId(Guid PIid)
+>>>>>>> Quan
         {
             var kq = db.Plan_Items.ToList().Find(x => x.Plan_ItemId == PIid);
             vPlanItems nplanit = new vPlanItems();
@@ -51,7 +55,7 @@ namespace DTModels.Models
             Plan_Items planI = new Plan_Items();
             planI.Plan_ItemId = vplan.Plan_ItemId;
             planI.ItemId = vplan.ItemId;
-            planI.PlanId = vplan.ItemId;
+            planI.PlanId = vplan.PlanId;
             return planI;
         }
         public vPlanItems changetovPlanItem(Plan_Items plan)
@@ -59,7 +63,7 @@ namespace DTModels.Models
             vPlanItems planI = new vPlanItems();
             planI.Plan_ItemId = plan.Plan_ItemId;
             planI.ItemId = plan.ItemId;
-            planI.PlanId = plan.ItemId;
+            planI.PlanId = plan.PlanId;
             return planI;
         }
     }

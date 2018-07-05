@@ -14,5 +14,9 @@ namespace DTModels.BaseModels
 
         public virtual bool Delete(T PI)
         { return false; }
+<<<<<<< HEAD
+=======
+
+>>>>>>> Quan
     }
 }

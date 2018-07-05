@@ -14,6 +14,10 @@ namespace DTBLL.BaseController
         { return false; }
 
         public virtual bool Delete(T Item)
+<<<<<<< HEAD
         { return false; }
+=======
+        { return false; } 
+>>>>>>> Quan
     }
 }

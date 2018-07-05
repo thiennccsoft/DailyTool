@@ -58,7 +58,11 @@ namespace DTModels.Models
             }
             return listP;
         }
+<<<<<<< HEAD
         public vPlans GetbyId(Guid planid)
+=======
+        public  vPlans GetbyId(Guid planid)
+>>>>>>> Quan
         {
             var kq = db.Plans.ToList().Find(x => x.PlanId == planid);
             vPlans nplan = new vPlans();
@@ -75,9 +79,11 @@ namespace DTModels.Models
         public override bool Update(vPlans plan)
         {
             Plans nplan = db.Plans.ToList().Find(x => x.PlanId == plan.PlanId);
-            db.Attach(nplan);
-            nplan = changetoPlan(plan);
-            db.Entry(nplan).State = EntityState.Modified;
+            //db.Attach(nplan);
+            //nplan = changetoPlan(plan);
+            //db.Entry(nplan).State = EntityState.Modified;
+            nplan.ReportId = plan.ReportId;
+            nplan.Status = plan.Status;
             db.SaveChanges();
             return true;
         }

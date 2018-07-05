@@ -15,5 +15,9 @@ namespace DTBLL.BaseController
 
         public virtual bool Delete(T RePort)
         { return false; }
+<<<<<<< HEAD
+=======
+
+>>>>>>> Quan
     }
 }

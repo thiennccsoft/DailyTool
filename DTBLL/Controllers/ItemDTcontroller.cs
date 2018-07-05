@@ -18,7 +18,11 @@ namespace DTBLL.Controllers
         {
             return it.GetbyPaging(pageIndex, pageSize);
         }
+<<<<<<< HEAD
         public vItems GetbyId(Guid Item)
+=======
+        public  vItems GetbyId(Guid Item)
+>>>>>>> Quan
         {
             return it.GetbyId(Item);
         }
@@ -33,6 +37,11 @@ namespace DTBLL.Controllers
         public override bool Delete(vItems Item)
         {
             return it.Delete(Item);
+        }
+
+        public List<vItems> getItemsNotFinish()
+        {
+            return it.getItemsNotFinish();
         }
     }
 }
