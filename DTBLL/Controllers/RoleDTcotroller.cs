@@ -14,7 +14,8 @@ namespace DTBLL.Controllers
         {
             return rl.GetAll();
         }
-        public  vRoles GetbyId(int roleid)
+
+        public vRoles GetbyId(int roleid)
         {
             return rl.GetbyId(roleid);
         }

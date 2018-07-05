@@ -12,6 +12,5 @@ namespace DTBLL.BaseController
 
         public virtual bool Delete(T UR)
         { return false; }
-
     }
 }

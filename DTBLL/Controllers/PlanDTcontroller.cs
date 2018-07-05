@@ -14,7 +14,8 @@ namespace DTBLL.Controllers
         {
             return pl.GetAll();
         }
-        public  vPlans GetbyId(Guid plan)
+
+        public vPlans GetbyId(Guid plan)
         {
             return pl.GetbyId(plan);
         }

@@ -64,7 +64,8 @@ namespace DTModels.Models
             }
             return listI;
         }
-        public  vItems GetbyId(Guid Itemid)
+
+        public vItems GetbyId(Guid Itemid)
         {
             var kq = db.Items.ToList().Find(x => x.ItemId == Itemid);
             vItems nitem = new vItems();

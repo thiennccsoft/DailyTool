@@ -68,20 +68,36 @@ namespace DTModels.Models
             }
             return listU;
         }
-        public  vUsers CheckLogin(string username, string password)
+        public vUsers CheckLogin(string username, string password)
         {
             var kq = db.Users.ToList().Find(x => x.UserName == username && x.PassWord == password);
-            vUsers nuser = new vUsers();
-            nuser = changetovUser(kq);
-
-            return nuser;
+            if(kq!=null)
+            {
+                vUsers nuser = new vUsers();
+                nuser = changetovUser(kq);
+                return nuser;
+            }
+            return null;
         }
-        public  vUsers GetbyId(Guid userid)
+
+        public vUsers ChangePassword(string userName,string oldPass,string newPass)
+        {
+            var user = db.Users.Where(x => x.UserName == userName && x.PassWord==oldPass).FirstOrDefault();
+            if(user!=null)
+            {
+                user.PassWord = newPass;                
+                vUsers nuser = new vUsers();
+                nuser = changetovUser(user);
+                db.SaveChanges();
+                return nuser;
+            }
+            return null;
+        }
+        public vUsers GetbyId(Guid userid)
         {
             var kq = db.Users.ToList().Find(x => x.UserId == userid);
             vUsers nuser = new vUsers();
             nuser = changetovUser(kq);
-
             return nuser;
         }
         public override bool Insert(vUsers user)

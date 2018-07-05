@@ -58,7 +58,8 @@ namespace DTModels.Models
             }
             return listP;
         }
-        public  vPlans GetbyId(Guid planid)
+
+        public vPlans GetbyId(Guid planid)
         {
             var kq = db.Plans.ToList().Find(x => x.PlanId == planid);
             vPlans nplan = new vPlans();

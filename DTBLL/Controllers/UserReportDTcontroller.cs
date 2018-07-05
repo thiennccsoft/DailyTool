@@ -14,7 +14,8 @@ namespace DTBLL.Controllers
         {
             return urp.GetAll();
         }
-        public  vUserReports GetbyId(Guid UR)
+
+        public vUserReports GetbyId(Guid UR)
         {
             return urp.GetbyId(UR);
         }

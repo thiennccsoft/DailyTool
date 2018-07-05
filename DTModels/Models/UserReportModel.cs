@@ -24,7 +24,7 @@ namespace DTModels.Models
             }
             return listUrp;
         }
-        public  vUserReports GetbyId(Guid id)
+        public vUserReports GetbyId(Guid id)
         {
             var kq = db.User_Reports.ToList().Find(x => x.User_report_Id == id);
             vUserReports nurp = new vUserReports();

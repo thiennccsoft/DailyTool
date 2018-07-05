@@ -16,5 +16,5 @@ namespace DTModels.BaseModels
 
         public virtual bool Delete(T role)
         { return false; }
-   }
+    }
 }
