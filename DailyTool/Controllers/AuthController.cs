@@ -91,5 +91,13 @@ namespace DailyTool.Controllers
                 return new OkObjectResult("Create user success");
             else return new OkObjectResult("Failed");
         }
+
+
+        //forgot password
+        [HttpPost("forgot-password")]
+        public IActionResult ChangePassword()
+        {
+            return Ok("ok");
+        }
     }
 }
