@@ -29,27 +29,20 @@ namespace DailyTool.Controllers
             _config = config;
         }
         [AllowAnonymous]
-        [HttpPost("token")]
-        public IActionResult CreateToken([FromBody]LoginViewModel login)
+        [HttpPost("login")]
+        public IActionResult Login([FromBody]LoginViewModel login)
         {
             IActionResult response = Unauthorized();
-            var user = Authenticate(login);
-            if (user != null)
+            var userCheck = controller.CheckLogin(login.UserName, login.PassWord);
+            if (userCheck != null)
             {
-                var tokenString = BuildToken(user);
-                response = Ok(new { token = tokenString });             
+                var tokenString = BuildToken(userCheck);
+                response = Ok(new { token = tokenString });      
                 return response;
             }
             else return new OkObjectResult("Tài khoản không đúng hoặc mật khẩu");
         }
-        //check login
-        private vUsers Authenticate(LoginViewModel model)
-        {
-            var userCheck = controller.CheckLogin(model.UserName,model.PassWord);
-            if (userCheck != null)
-                return userCheck;
-            else return null;
-        }
+        
         //create token
         private string BuildToken(vUsers user)
         {
@@ -62,7 +55,7 @@ namespace DailyTool.Controllers
             var token = new JwtSecurityToken(_config["Jwt:Issuer"],
               _config["Jwt:Issuer"],
               claimData,
-              expires: DateTime.Now,
+              expires: DateTime.Now.AddHours(1),
               signingCredentials: creds);
 
             return new JwtSecurityTokenHandler().WriteToken(token);
@@ -75,8 +68,29 @@ namespace DailyTool.Controllers
             
             if (controller.Insert(vUser))
                 return new OkObjectResult("Create user success");
-            else return new OkObjectResult("Failed");
+            else return BadRequest();
         }
-        
+        //change password
+        [Authorize(Policy = "Customer")]
+        [HttpPost("change-password")]
+        public IActionResult ChangePassword([FromBody]ChangePasswordModel changModel )
+        {
+            if(!ModelState.IsValid)
+            {
+                return new OkObjectResult("Failed");      
+            }
+            vUsers user = new vUsers();
+            var userCheck = controller.ChangePass(changModel.UserName, changModel.PassWord, changModel.NewPassWord);
+            if (userCheck!=null)
+            {
+                return new OkObjectResult(userCheck);
+            }
+            return new OkObjectResult("Failed");
+        }
+        [HttpPost("forgot-password")]
+        public IActionResult ForgotPassword()
+        {
+            return Ok();
+        }
     }
 }

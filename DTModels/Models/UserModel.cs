@@ -80,6 +80,19 @@ namespace DTModels.Models
             }
             return null;
         }
+        public vUsers ChangePassword(string userName,string oldPass,string newPass)
+        {
+            var user = db.Users.Where(x => x.UserName == userName && x.PassWord==oldPass).FirstOrDefault();
+            if(user!=null)
+            {
+                user.PassWord = newPass;                
+                vUsers nuser = new vUsers();
+                nuser = changetovUser(user);
+                db.SaveChanges();
+                return nuser;
+            }
+            return null;
+        }
         public vUsers GetbyId(Guid userid)
         {
             var kq = db.Users.ToList().Find(x => x.UserId == userid);

@@ -39,5 +39,9 @@ namespace DTBLL.Controllers
         {
             return udm.Delete(user);
         }
+        public vUsers ChangePass(string userName,string oldPass,string newPass)
+        {
+            return udm.ChangePassword(userName,oldPass, newPass);
+        }
     }
 }

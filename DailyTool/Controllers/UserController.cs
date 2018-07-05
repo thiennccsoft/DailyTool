@@ -16,7 +16,7 @@ namespace DailyTool.Controllers
     public class UserController : ControllerBase
     {
         UserDTcontroller controller = new UserDTcontroller();
-        [HttpGet("getall")]
+        [HttpGet("getall"),Authorize(Policy ="Admin")]
         public IEnumerable<vUsers> GetAll(int pageIndex=0)
         {
             var total_count = controller.GetAll().Count;
@@ -25,6 +25,7 @@ namespace DailyTool.Controllers
             
             return list;
         }
+        [AllowAnonymous]
         [HttpPost]
         public IActionResult Post([FromBody] RegisterViewModel model)
         {

@@ -50,22 +50,16 @@ namespace DailyTool
                 configuration.RootPath = "ClientApp/dist";
             });
             // api user claim policy
+           
             services.AddAuthorization(options =>
             {
-                options.AddPolicy("Admin", policy => policy.RequireClaim("Admin","1"));
+                options.AddPolicy("Admin", policy => policy.RequireClaim("Admin", "1"));
+                options.AddPolicy("Administrator", policy => policy.RequireRole("Administrator"));
+                options.AddPolicy("Customer", policy => policy.RequireClaim("Customer", "3"));
+                options.AddPolicy("Tester", policy => policy.RequireClaim("Tester", "4"));
+                options.AddPolicy("Manager", policy => policy.RequireClaim("Manager", "2"));
             });
-            services.AddAuthorization(options =>
-            {
-                options.AddPolicy("Customer", policy => policy.RequireClaim("Customer","3"));
-            });
-            services.AddAuthorization(options =>
-            {
-                options.AddPolicy("Tester", policy => policy.RequireClaim("Tester","4"));
-            });
-            services.AddAuthorization(options =>
-            {
-                options.AddPolicy("Manager", policy => policy.RequireClaim("Manager","2"));
-            });
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
