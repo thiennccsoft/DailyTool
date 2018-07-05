@@ -1,0 +1,30 @@
+﻿
+<div style='text-align: center;'>
+    <h1 style='color: red;'>--BÁO CÁO--</h1>
+    <i>Ngày {{NowDay}}</i>
+</div>
+
+<div style='text-align: center;'>
+    <h3 style='color: blue;'>Các thành viên chưa gửi báo cáo:</h3>
+</div>
+
+<table style='border: 1px solid #ddd;text-align: left;border-collapse: collapse;width: 100%;'>
+    <tr>
+        <th style='border: 1px solid #ddd;text-align: left;padding: 15px;'>Tên thành viên</th>
+        <th style='border: 1px solid #ddd;text-align: left;padding: 15px;'>Địa chỉ email</th>
+    </tr>
+    {{ContentUserNotReport}}
+</table>
+
+<div style='text-align: center;'>
+    <h3 style='color: blue;'>Danh sách công việc chưa hoàn thành:</h3>
+</div>
+
+<table style='border: 1px solid #ddd;text-align: left;border-collapse: collapse;width: 100%;'>
+    <tr>
+        <th style='border: 1px solid #ddd;text-align: left;padding: 15px;'>Công việc</th>
+        <th style='border: 1px solid #ddd;text-align: left;padding: 15px;'>Ngày bắt đầu</th>
+        <th style='border: 1px solid #ddd;text-align: left;padding: 15px;'>Ngày hoàn thành</th>
+    </tr>
+    {{ContentWorkNotFinish}}
+</table>

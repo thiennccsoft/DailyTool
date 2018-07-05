@@ -22,9 +22,9 @@ namespace DailyTool.MailSchedule
             scheduler.Start();
 
             IJobDetail jobToUser = JobBuilder.Create<MailToUser>().Build();
-            scheduleJob(jobToUser, "MailToUser", 10, 28);
+            scheduleJob(jobToUser, "MailToUser", 16, 05);
             IJobDetail jobToAdmin = JobBuilder.Create<MailToAdmin>().Build();
-            scheduleJob(jobToAdmin, "MailToAdmin", 10, 29);
+            scheduleJob(jobToAdmin, "MailToAdmin", 16, 05);
         }
 
         private void scheduleJob(IJobDetail job, String tgName, int hour, int minute)

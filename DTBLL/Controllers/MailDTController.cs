@@ -23,7 +23,7 @@ namespace DTBLL.Controllers
                 return;
             foreach (vUsers item in lst)
             {
-                SendEmail(item, BodyUserNotReport(item));
+                SendEmail(item, BodyUserNotReport(item, ReadHtml("MailToUser.html")));
             }
         }
 
@@ -34,7 +34,7 @@ namespace DTBLL.Controllers
             List<vUsers> users = udm.getUsersNotReport();
             foreach (var item in admins)
             {
-                SendEmail(item, BodyForAdmin(items, users));
+                SendEmail(item, BodyForAdmin(items, users, ReadHtml("MailToAdmin.html")));
             }
         }
 
@@ -54,57 +54,50 @@ namespace DTBLL.Controllers
             client.Send(mail);
         }
 
-        private String BodyUserNotReport(vUsers user)
+        private String ReadHtml(String fileName)
         {
-            String content = "";
-            content += "<div style='text-align: center;'>" +
-                       "<h1 style = 'color: red;' >---CẢNH BÁO---</h1>" +
-                       "<p>Chào <strong>" + user.UserName + "</strong>!</p>" +
-                       "<p> Bạn quên báo cáo ???</p>" +
-                       "<p><a href = ''> Báo cáo ngay</a></p>" +
-                       "</div> ";
-            return content;
+            try
+            {
+                String[] str = File.ReadAllLines("Temp/" + fileName);
+                String result = "";
+                foreach (String item in str)
+                {
+                    result += item;
+                }
+                return result;
+            }
+            catch
+            {
+                return "";
+            }
+
         }
 
-        private String BodyForAdmin(List<vItems> items, List<vUsers> users)
+        private String BodyUserNotReport(vUsers user, String htmlTemplate)
         {
-            String content = "";
+            return htmlTemplate.Replace("{{UserName}}", user.UserName);
+        }
 
-            content += "<div style = 'text-align: center;'>" +
-                       "<h1 style = 'color: red;'> Report </h1>" +
-                       "<p><strong> Danh sách thành viên chưa báo cáo:</strong></p>" +
-                       "<table style = 'border: 1px solid #ccc; margin: 0 auto;'>" +
-                       "<tr>" +
-                       "<th> UserID </th>" +
-                       "<th> UserName </th>" +
-                       "</tr><hr/>";
-            foreach (var item in users)
+        private String BodyForAdmin(List<vItems> items, List<vUsers> users, String htmlTemplate)
+        {
+            String contentUserNotReport = "";
+            foreach (vUsers user in users)
             {
-                content += "<tr>" +
-                           "<td>" + item.UserId + "</td>" +
-                           "<td>" + item.UserName + " </td>" +
-                           "</tr>";
+                contentUserNotReport += ReadHtml("UserNotReportPartial.html")
+                .Replace("{{UserName}}", user.UserName)
+                .Replace("{{Email}}", user.Email);
             }
-            content += "</table>" +
-                       "<p><strong> Danh sách công việc chưa hoàn thành:</strong></p>" +
-                       "<table style = 'border: 1px solid #ccc; margin: 0 auto;' cellpadding = '5px'>" +
-                       "<tr>" +
-                       "<th> Công việc </th>" +
-                       "<th> Ngày bắt đầu </th>" +
-                       "<th> Ngày kết thúc </th>" +
-                       "</tr>";
-            foreach (var item in items)
+            String contentWorkNotFinish = "";
+            foreach (vItems item in items)
             {
-                content += "<tr>" +
-                           "<td>" + item.Title + "</td>" +
-                           "<td>" + item.Created_At.ToString("d") + "</td>" +
-                           "<td>" + item.Finish_At?.ToString("dd-MM-yyyy") + "</td>" +
-                           "</tr>";
+                contentWorkNotFinish += ReadHtml("WorkNotFinish.html")
+                .Replace("{{WorkName}}", item.Title)
+                .Replace("{{DateStart}}", item.Created_At.ToString("dd-MM-yyyy"))
+                .Replace("{{DateEnd}}", item.Finish_At?.ToString("dd-MM-yyyy"));
             }
-            content+="</table>" +
-                     "</div>";
-
-            return content;
+            return htmlTemplate.Replace("{{NowDay}}", DateTime.Now.ToString("dd-MM-yyyy"))
+            .Replace("{{ContentUserNotReport}}", contentUserNotReport)
+            .Replace("{{ContentWorkNotFinish}}", contentWorkNotFinish);
         }
 
     }
