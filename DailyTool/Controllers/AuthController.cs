@@ -12,13 +12,9 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-<<<<<<< HEAD
-using Microsoft.IdentityModel.Tokens;
-=======
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 
->>>>>>> Hue
 namespace DailyTool.Controllers
 {
     [Route("api/[controller]")]
@@ -26,32 +22,27 @@ namespace DailyTool.Controllers
     public class AuthController : ControllerBase
     {
         UserDTcontroller controller = new UserDTcontroller();
-<<<<<<< HEAD
-        RoleDTcotroller role = new RoleDTcotroller();
-        [HttpPost("login")]
-        public IActionResult Login([FromBody] LoginViewModel model)
-=======
         RoleDTcotroller roleDT = new RoleDTcotroller();
+        
         private IConfiguration _config;
 
         public AuthController(IConfiguration config)
         {
             _config = config;
         }
-        
+        [HttpPost("login")]
+        //public IActionResult Login([FromBody] LoginViewModel model)
+        //{
+
+        //}
         [HttpPost("token")]
         public IActionResult Token([FromBody] LoginViewModel model)
         {
-            vUsers user = new vUsers
-            {
-                UserName = model.UserName,
-                PassWord = model.PassWord
-            };
-            var userCheck = controller.CheckLogin(user);
+            var userCheck = controller.CheckLogin(model.UserName, model.PassWord);
             if (userCheck != null)
             {
-                int dt = controller.getUserByUserName(user.UserName).RoleId;
-                string name = role.GetbyId(dt).RoleName;
+                int dt = controller.getUserByUserName(model.UserName).RoleId;
+                string name = roleDT.GetbyId(dt).RoleName;
 
                 var claimsdata = new[] 
                 {

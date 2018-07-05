@@ -70,7 +70,7 @@ namespace DTModels.Models
         }
         public vUsers CheckLogin(string username, string password)
         {
-            var kq = db.Users.ToList().Find(x => x.UserName == user.UserName && x.PassWord == user.PassWord);
+            var kq = db.Users.ToList().Find(x => x.UserName == username && x.PassWord == password);
             if(kq!= null)
             {
                 vUsers nuser = new vUsers();
