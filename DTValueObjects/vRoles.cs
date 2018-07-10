@@ -2,11 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
-<<<<<<< HEAD
-namespace DTValueObjects
-{
-    public class vRoles 
-=======
 
 namespace DTValueObjects
 {

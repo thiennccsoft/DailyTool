@@ -9,11 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DTModels", "..\DTModels\DTM
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DTValueObjects", "..\DTValueObjects\DTValueObjects.csproj", "{74D8CF96-B52E-4562-B182-DF17685FB041}"
 EndProject
-<<<<<<< HEAD
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DTBLL", "..\DTBLL\DTBLL.csproj", "{8E888A71-A381-47F1-9E1B-8D96D309E4E2}"
-=======
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTBLL", "..\DTBLL\DTBLL.csproj", "{8E888A71-A381-47F1-9E1B-8D96D309E4E2}"
->>>>>>> Giap
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

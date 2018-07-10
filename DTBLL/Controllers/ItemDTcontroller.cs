@@ -34,13 +34,9 @@ namespace DTBLL.Controllers
         {
             return it.Delete(Item);
         }
-<<<<<<< HEAD
-
         public List<vItems> getItemsNotFinish()
         {
             return it.getItemsNotFinish();
         }
-=======
->>>>>>> Giap
     }
 }

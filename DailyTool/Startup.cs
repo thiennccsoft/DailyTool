@@ -1,11 +1,8 @@
-<<<<<<< HEAD
 using DailyTool.MailSchedule;
 using DTModels.Database;
 using DTValueObjects;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-=======
 using DTModels.Database;
->>>>>>> Giap
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;

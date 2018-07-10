@@ -24,11 +24,7 @@ namespace DTModels.Models
             }
             return listUrp;
         }
-<<<<<<< HEAD
         public vUserReports GetbyId(Guid id)
-=======
-        public  vUserReports GetbyId(Guid id)
->>>>>>> Giap
         {
             var kq = db.User_Reports.ToList().Find(x => x.User_report_Id == id);
             vUserReports nurp = new vUserReports();
@@ -67,9 +63,5 @@ namespace DTModels.Models
             nuserrp.ReportId = userrp.ReportId;
             return nuserrp;
         }
-<<<<<<< HEAD
-        
-=======
->>>>>>> Giap
     }
 }
