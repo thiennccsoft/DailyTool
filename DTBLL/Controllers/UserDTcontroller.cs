@@ -49,5 +49,13 @@ namespace DTBLL.Controllers
         {
             return udm.ChangePassword(userName,oldPass, newPass);
         }
+        public bool checkEmail(string email)
+        {
+            return udm.checkEmail(email);
+        }
+        public vUsers GetByEmail(string email)
+        {
+            return udm.GetByEmail(email);
+        }
     }
 }

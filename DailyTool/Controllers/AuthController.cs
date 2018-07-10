@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
+using System.IO;
 using System.Linq;
 using System.Security.Claims;
 using System.Text;
@@ -22,6 +23,7 @@ namespace DailyTool.Controllers
     {
         UserDTcontroller controller = new UserDTcontroller();
         RoleDTcotroller roleDT = new RoleDTcotroller();
+        MailDTController mailDT = new MailDTController();
         private IConfiguration _config;
 
         public AuthController(IConfiguration config)
@@ -87,10 +89,35 @@ namespace DailyTool.Controllers
             }
             return new OkObjectResult("Failed");
         }
+
         [HttpPost("forgot-password")]
-        public IActionResult ForgotPassword()
+        public IActionResult ForgotPassword([FromBody]EmailViewModel viewModel)
         {
-            return Ok();
+            if(controller.checkEmail(viewModel.Email))
+            {
+                var u = System.IO.File.ReadAllText("forgotpassword.html");
+                //send mail
+                u.Replace("{{email}}", viewModel.Email);
+                mailDT.SendEmail(controller.GetByEmail(viewModel.Email),u);
+                return new OkObjectResult("da gui mail toi " + viewModel.Email);
+            }
+            
+            return new OkObjectResult("khong tim thay mail");
+        }
+        [HttpPost("changepassword/{email}")]
+        public IActionResult Change(string email, [FromBody]ChangePasswordModel changModel)
+        {
+            if (!ModelState.IsValid)
+            {
+                return new OkObjectResult("Failed");
+            }
+            vUsers user = new vUsers();
+            var userCheck = controller.ChangePass(changModel.UserName, changModel.PassWord, changModel.NewPassWord);
+            if (userCheck != null)
+            {
+                return new OkObjectResult(userCheck);
+            }
+            return new OkObjectResult("Failed");
         }
     }
 }

@@ -80,6 +80,18 @@ namespace DTModels.Models
             return null;
         }
 
+        public vUsers GetByEmail(string email)
+        {
+            var user = db.Users.Where(x => x.Email == email).FirstOrDefault();
+            if (user != null)
+            {
+                vUsers vUser = new vUsers();
+                vUser = changetovUser(user);
+                return vUser;
+            }
+            return null;
+        }
+
         public vUsers ChangePassword(string userName,string oldPass,string newPass)
         {
             var user = db.Users.Where(x => x.UserName == userName && x.PassWord==oldPass).FirstOrDefault();
@@ -178,6 +190,17 @@ namespace DTModels.Models
                 result.Add(changetovUser(item));
             }
             return result;
+        }
+
+        public bool checkEmail(string email)
+        {
+            try
+            {
+                var a = db.Users.Single(x => x.Email == email); return true;
+            }
+            catch {
+            return false;
+            }
         }
     }
 }
