@@ -15,13 +15,14 @@ namespace DailyTool.Controllers.Admin
     {
         // GET: api/Plans
         [HttpGet]
+        [Route("getPlans")]
         public IEnumerable<vPlans> Get()
         {
             return new PlanDTcontroller().GetAll();
         }
 
         // GET: api/Plans/5
-        [HttpGet("{id}", Name = "Get")]
+        [HttpGet("getPlans/{id}")]
         public IActionResult Get(Guid id)
         {
             if(id == null || id == Guid.Empty)
