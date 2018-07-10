@@ -24,7 +24,6 @@ namespace DTModels.Models
             }
             return listPI;
         }
-
         public vPlanItems GetbyId(Guid PIid)
         {
             var kq = db.Plan_Items.ToList().Find(x => x.Plan_ItemId == PIid);

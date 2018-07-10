@@ -15,7 +15,6 @@ namespace DTBLL.Controllers
             return pi.GetAll();
 
         }
-
         public vPlanItems GetbyId(Guid PI)
         {
             return pi.GetbyId(PI);

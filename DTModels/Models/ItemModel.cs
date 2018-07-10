@@ -64,7 +64,6 @@ namespace DTModels.Models
             }
             return listI;
         }
-
         public vItems GetbyId(Guid Itemid)
         {
             var kq = db.Items.ToList().Find(x => x.ItemId == Itemid);
@@ -122,7 +121,6 @@ namespace DTModels.Models
             nitem.Finish_At = item.Finish_At;
             return nitem;
         }
-        
         public List<vItems> getItemsNotFinish()
         {
             var lst = db.Items.Where(a => a.Status == 0);
@@ -133,6 +131,5 @@ namespace DTModels.Models
             }
             return result;
         }
-
     }
 }

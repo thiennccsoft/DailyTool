@@ -26,43 +26,14 @@ namespace DTModels.Models
         }
         public override List<vUsers> GetbyPaging(int pageIndex, int pageSize)
         {
-            //int rc = 0;
-            var listab = db.Users.OrderBy(x => x.UserName).Skip(pageIndex * pageSize).Take(pageSize).ToList();
-            //var listUser = from t in (db.Users.OrderBy(x => x.UserName).Distinct().ToList())
-            //               select new
-            //               {
-            //                   RowNumber = ++rc,
-            //                   t.UserId,
-            //                   t.UserName,
-            //                   t.PassWord,
-            //                   t.Email,
-            //                   t.Created_At,
-            //                   t.ReportReciver,
-            //                   t.RoleId
-            //               };
-            //var listab = from i in listUser
-            //             where i.RowNumber > pageIndex && i.RowNumber <= (pageIndex * pageSize)
-            //             select new
-            //             {
-            //                 i.UserId,
-            //                 i.UserName,
-            //                 i.PassWord,
-            //                 i.Email,
-            //                 i.Created_At,
-            //                 i.ReportReciver,
-            //                 i.RoleId
-            //             };
+        {
+            
             List<vUsers> listU = new List<vUsers>();
-            foreach (var item in listab)
+            var listuser = db.Users;
+            foreach (var item in listuser)
             {
                 vUsers user = new vUsers();
-                user.UserId = item.UserId;
-                user.UserName = item.UserName;
-                user.PassWord = item.PassWord;
-                user.Email = item.Email;
-                user.Created_At = item.Created_At;
-                user.ReportReciver = item.ReportReciver;
-                user.RoleId = item.RoleId;
+                user = changetovUser(item);
 
                 listU.Add(user);
             }
@@ -112,9 +83,24 @@ namespace DTModels.Models
             nuser = changetovUser(kq);
             return nuser;
         }
+        public  vUsers CheckLogin(string username, string password)
+        {
+            var kq = db.Users.ToList().Find(x => x.UserName == username && x.PassWord == password);
+            vUsers nuser = new vUsers();
+            nuser = changetovUser(kq);
+
+            return nuser;
+        }
+        public  vUsers GetbyId(Guid userid)
+        {
+            var kq = db.Users.ToList().Find(x => x.UserId == userid);
+            vUsers nuser = new vUsers();
+            nuser = changetovUser(kq);
+
+            return nuser;
+        }
         public override bool Insert(vUsers user)
         {
-
             Users nuser = changetoUser(user);
             db.Users.Add(nuser);
             db.SaveChanges();

@@ -24,7 +24,6 @@ namespace DTModels.Models
             }
             return listrp;
         }
-
         public vReports GetbyId(Guid rePortid)
         {
             var kq = db.Reports.ToList().Find(x => x.ReportId == rePortid);

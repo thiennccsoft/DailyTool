@@ -1,7 +1,11 @@
+<<<<<<< HEAD
 using DailyTool.MailSchedule;
 using DTModels.Database;
 using DTValueObjects;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+=======
+using DTModels.Database;
+>>>>>>> Giap
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -42,7 +46,6 @@ namespace DailyTool
                 });
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             var connection = @"Server=.;Database=PlanDaily;Trusted_Connection=True;User Id=sa;Password=123456;";
-
             services.AddDbContext<PlanDailyContext>(options => options.UseSqlServer(connection));
 
             // In production, the Angular files will be served from this directory

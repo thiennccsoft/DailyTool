@@ -15,7 +15,6 @@ namespace DTBLL.Controllers
         {
             return udm.GetAll();
         }
-
         public vUsers CheckLogin(string username, string password)
         {
             return udm.CheckLogin(username, password);
@@ -40,7 +39,6 @@ namespace DTBLL.Controllers
         {
             return udm.Delete(user);
         }
-
         public List<vUsers> getUsersNotReport()
         {
             return udm.getUsersNotReport();	

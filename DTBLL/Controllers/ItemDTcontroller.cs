@@ -18,7 +18,6 @@ namespace DTBLL.Controllers
         {
             return it.GetbyPaging(pageIndex, pageSize);
         }
-
         public vItems GetbyId(Guid Item)
         {
             return it.GetbyId(Item);
@@ -35,10 +34,13 @@ namespace DTBLL.Controllers
         {
             return it.Delete(Item);
         }
+<<<<<<< HEAD
 
         public List<vItems> getItemsNotFinish()
         {
             return it.getItemsNotFinish();
         }
+=======
+>>>>>>> Giap
     }
 }
