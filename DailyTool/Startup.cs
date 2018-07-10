@@ -1,7 +1,11 @@
+<<<<<<< HEAD
 using DailyTool.MailSchedule;
 using DTModels.Database;
 using DTValueObjects;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+=======
+using DTModels.Database;
+>>>>>>> Giap
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -41,8 +45,12 @@ namespace DailyTool
                     };
                 });
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+<<<<<<< HEAD
             var connection = @"Server=.;Database=PlanDaily;Trusted_Connection=True;User Id=sa;Password=123456;";
 
+=======
+            var connection = @"Server=.\SQLEXPRESS;Database=PlanDaily;Trusted_Connection=True;User Id=sa;Password=123456;";
+>>>>>>> Giap
             services.AddDbContext<PlanDailyContext>(options => options.UseSqlServer(connection));
 
             // In production, the Angular files will be served from this directory
@@ -66,7 +74,10 @@ namespace DailyTool
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, IApplicationLifetime lifetime)
         {
+<<<<<<< HEAD
             app.UseAuthentication();
+=======
+>>>>>>> Giap
             using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
             {
                 var context = serviceScope.ServiceProvider.GetRequiredService<PlanDailyContext>();

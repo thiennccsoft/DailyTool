@@ -24,6 +24,23 @@ namespace DTModels.Models
             }
             return listU;
         }
+
+	//dong nay them 1
+        public override List<vUsers> GetbyPaging1(int pageIndex, int pageSize)
+        {
+            
+            List<vUsers> listU = new List<vUsers>();
+            var listuser = db.Users;
+            foreach (var item in listuser)
+            {
+                vUsers user = new vUsers();
+                user = changetovUser(item);
+
+                listU.Add(user);
+            }
+            return listU;
+        }
+
         public override List<vUsers> GetbyPaging(int pageIndex, int pageSize)
         {
             //int rc = 0;
@@ -68,6 +85,7 @@ namespace DTModels.Models
             }
             return listU;
         }
+
         public vUsers CheckLogin(string username, string password)
         {
             var kq = db.Users.ToList().Find(x => x.UserName == username && x.PassWord == password);
@@ -93,6 +111,7 @@ namespace DTModels.Models
             }
             return null;
         }
+
         public vUsers GetbyId(Guid userid)
         {
             var kq = db.Users.ToList().Find(x => x.UserId == userid);
@@ -100,14 +119,15 @@ namespace DTModels.Models
             nuser = changetovUser(kq);
             return nuser;
         }
+
         public override bool Insert(vUsers user)
         {
-
             Users nuser = changetoUser(user);
             db.Users.Add(nuser);
             db.SaveChanges();
             return true;
         }
+
         public override bool Update(vUsers user)
         {
             Users nuser = db.Users.ToList().Find(x => x.UserId == user.UserId);
@@ -123,13 +143,16 @@ namespace DTModels.Models
 
             return true;
         }
+
         public override bool Delete(vUsers user)
         {
             Users nuser = changetoUser(user);
             db.Users.Remove(nuser);
             db.SaveChanges();
             return true;
+
         }
+
         public Users changetoUser(vUsers vuser)
         {
             Users nuser = new Users();
