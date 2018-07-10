@@ -25,22 +25,6 @@ namespace DTModels.Models
             return listU;
         }
 
-	//dong nay them 1
-        public override List<vUsers> GetbyPaging1(int pageIndex, int pageSize)
-        {
-            
-            List<vUsers> listU = new List<vUsers>();
-            var listuser = db.Users;
-            foreach (var item in listuser)
-            {
-                vUsers user = new vUsers();
-                user = changetovUser(item);
-
-                listU.Add(user);
-            }
-            return listU;
-        }
-
         public override List<vUsers> GetbyPaging(int pageIndex, int pageSize)
         {
             //int rc = 0;
