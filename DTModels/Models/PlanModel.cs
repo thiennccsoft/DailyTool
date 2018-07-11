@@ -75,9 +75,11 @@ namespace DTModels.Models
         public override bool Update(vPlans plan)
         {
             Plans nplan = db.Plans.ToList().Find(x => x.PlanId == plan.PlanId);
-            db.Attach(nplan);
-            nplan = changetoPlan(plan);
-            db.Entry(nplan).State = EntityState.Modified;
+            //db.Attach(nplan);
+            //nplan = changetoPlan(plan);
+            //db.Entry(nplan).State = EntityState.Modified;
+            nplan.ReportId = plan.ReportId;
+            nplan.Status = plan.Status;
             db.SaveChanges();
             return true;
         }

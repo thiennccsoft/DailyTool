@@ -47,6 +47,5 @@ namespace DTBLL.Controllers
         {
             return udm.GetByEmail(email);
         }
-        
     }
 }

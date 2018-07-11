@@ -79,9 +79,12 @@ namespace DTModels.Models
         public override bool Update(vReports RePort)
         {
             Reports report = db.Reports.ToList().Find(x => x.ReportId == RePort.ReportId);
-            db.Attach(report);
-            report = changetoReport(RePort);
-            db.Entry(report).State = EntityState.Modified;
+            //db.Attach(report);
+            //report = changetoReport(RePort);
+            //db.Entry(report).State = EntityState.Modified;
+            report.Title = RePort.Title;
+            report.Description = RePort.Description;
+            report.Issue = RePort.Issue;
             db.SaveChanges();
             return true;
         }

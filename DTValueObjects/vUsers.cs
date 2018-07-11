@@ -26,12 +26,15 @@ namespace DTValueObjects
         [DataType(DataType.Password)]
         public string PassWord { get; set; }
 
+<<<<<<< HEAD
         [Required]
         [StringLength(50, MinimumLength = 6, ErrorMessage = "Mật khẩu phải dài hơn 6 kí tự!")]
         [Display(Name = "Mật khẩu")]
         [DataType(DataType.Password)]
         public string OldPassWord { get; set; }
 
+=======
+>>>>>>> 7a2fbeefdc9b16a90e69c0678e0bc1f8afcf09a2
         public Guid? ReportReciver { get; set; }
 
         [Required]
