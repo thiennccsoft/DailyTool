@@ -10,13 +10,13 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DailyTool.Controllers
-{
+{    
     [Route("api/[controller]")]
     [ApiController]
     public class UserController : ControllerBase
     {
         UserDTcontroller controller = new UserDTcontroller();
-        [HttpGet("getall"),Authorize(Policy ="Admin")]
+        [HttpGet("getall")]
         public IEnumerable<vUsers> GetAll(int pageIndex=0)
         {
             var total_count = controller.GetAll().Count;

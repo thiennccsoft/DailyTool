@@ -41,7 +41,12 @@ namespace DTBLL.Controllers
         }
         public vUsers ChangePass(string userName,string oldPass,string newPass)
         {
-            return udm.ChangePassword(userName,oldPass, newPass);
+            return udm.ChangePassword(userName, oldPass,newPass);
         }
+        public vUsers GetByEmail(string email)
+        {
+            return udm.GetByEmail(email);
+        }
+        
     }
 }

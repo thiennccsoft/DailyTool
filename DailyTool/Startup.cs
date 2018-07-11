@@ -1,3 +1,4 @@
+using DailyTool.Auth;
 using DTModels.Database;
 using DTValueObjects;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -54,10 +55,11 @@ namespace DailyTool
             services.AddAuthorization(options =>
             {
                 options.AddPolicy("Admin", policy => policy.RequireClaim("Admin", "1"));
-                options.AddPolicy("Administrator", policy => policy.RequireRole("Administrator"));
+                options.AddPolicy("Admin", policy => policy.RequireRole("Admin"));
                 options.AddPolicy("Customer", policy => policy.RequireClaim("Customer", "3"));
                 options.AddPolicy("Tester", policy => policy.RequireClaim("Tester", "4"));
                 options.AddPolicy("Manager", policy => policy.RequireClaim("Manager", "2"));
+                options.AddPolicy("OnlyAdmin", policy =>policy.Requirements.Add(new AuthenRequirement(1)));
             });
             
         }

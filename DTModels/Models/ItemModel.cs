@@ -117,5 +117,21 @@ namespace DTModels.Models
             nitem.Finish_At = item.Finish_At;
             return nitem;
         }
+        public List<vItems> GetItemsNoFinish()
+        {
+            List<vItems> list = new List<vItems>();
+            var listItem = db.Items.Where(x=>x.Status==0).ToList();
+            foreach (var item in listItem)
+            {
+                vItems vItem = new vItems();
+                vItem.Created_At = item.Created_At;
+                vItem.Description = item.Description;
+                vItem.Finish_At = item.Finish_At;
+                vItem.Title = item.Title;
+                vItem.Status = item.Status;
+                list.Add(vItem);
+            }
+            return list;
+        }
     }
 }

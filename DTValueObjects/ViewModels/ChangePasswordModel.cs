@@ -31,5 +31,7 @@ namespace DTValueObjects.ViewModels
         [Compare("NewPassWord", ErrorMessage = "The new password and confirmation password do not match.")]
         [DataType(DataType.Password)]
         public string ComfirmPassWord { get; set; }
+        public int Code { set; get; }
+        public string Email { set; get; }
     }
 }

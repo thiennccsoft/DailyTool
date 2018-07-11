@@ -93,6 +93,17 @@ namespace DTModels.Models
             }
             return null;
         }
+        public vUsers GetByEmail(string email)
+        {
+            var user = db.Users.Where(x => x.Email == email).FirstOrDefault();
+            if(user!=null)
+            {
+                vUsers vUser = new vUsers();
+                vUser = changetovUser(user);
+                return vUser;
+            }
+            return null;
+        }
         public vUsers GetbyId(Guid userid)
         {
             var kq = db.Users.ToList().Find(x => x.UserId == userid);
