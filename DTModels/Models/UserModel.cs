@@ -105,17 +105,6 @@ namespace DTModels.Models
             }
             return null;
         }
-        public vUsers GetbyId(Guid userid)
-        {
-=======
-        public  vUsers CheckLogin(string username, string password)
-        {
-            var kq = db.Users.ToList().Find(x => x.UserName == username && x.PassWord == password);
-            vUsers nuser = new vUsers();
-            nuser = changetovUser(kq);
-
-            return nuser;
-        }
         public  vUsers GetbyId(Guid userid)
         {
             var kq = db.Users.ToList().Find(x => x.UserId == userid);

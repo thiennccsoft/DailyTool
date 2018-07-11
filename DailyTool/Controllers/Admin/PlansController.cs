@@ -21,7 +21,7 @@ namespace DailyTool.Controllers.Admin
         }
 
         // GET: api/Plans/5
-        [HttpGet("{id}", Name = "Get")]
+        [HttpGet("{id}")]
         public IActionResult Get(Guid id)
         {
             if(id == null || id == Guid.Empty)

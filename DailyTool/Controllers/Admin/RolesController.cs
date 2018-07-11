@@ -21,7 +21,7 @@ namespace DailyTool.Controllers.Admin
         }
 
         // GET: Phan-quyen/Roles/5
-        [HttpGet("{id}", Name = "GetRole")]
+        [HttpGet("{id}")]
         public IActionResult Getbyid(int id)
         {
             RoleDTcotroller roleControl = new RoleDTcotroller();

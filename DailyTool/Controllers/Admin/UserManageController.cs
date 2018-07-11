@@ -23,7 +23,7 @@ namespace DailyTool.Controllers.Admin
         }
 
         // GET: quan-ly/UserManage/5
-        [HttpGet("{id}", Name = "GetUser")]
+        [HttpGet("{id}")]
         public IActionResult Get(Guid id)
         {
             if (id == null || id == Guid.Empty)

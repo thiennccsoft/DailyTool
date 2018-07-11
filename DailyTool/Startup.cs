@@ -1,11 +1,6 @@
-<<<<<<< HEAD
 using DailyTool.Auth;
 using DTModels.Database;
-using DTValueObjects;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-=======
-using DTModels.Database;
->>>>>>> 7a2fbeefdc9b16a90e69c0678e0bc1f8afcf09a2
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
